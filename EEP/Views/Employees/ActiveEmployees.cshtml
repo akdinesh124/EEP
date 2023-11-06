@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Create";
+    Layout = "_Layout";
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>JobTitle</th>
+            <th>DateOfJoinig</th>
+
+        </tr>
+    </thead>
+    <tbody data-bind="foreach: data">
+        <tr>
+            <td data-bind="text: id"></td>
+            <td data-bind="text: firstName"></td>
+            <td data-bind="text: lastName"></td>
+            <td data-bind="text: jobTitle"></td>
+            <td data-bind="text: dateOfJoining"></td>
+            
+        </tr>
+    </tbody>
+</table>

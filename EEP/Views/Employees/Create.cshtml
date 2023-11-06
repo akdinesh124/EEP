@@ -1,0 +1,61 @@
+﻿@model EEP.Models.Employee
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_Layout";
+}
+
+<h1>Create</h1>
+
+<h4>Employee</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" data-bind="value: FirstName" id="FirstName" />
+                <span class="text-danger" id="FirstNameValidator"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class ="form-control" data-bind="value: LastName" />
+                <span class="text-danger" id="LastNameValidator"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" data-bind="value: Email" />
+                <span class="text-danger" id="EmailValidator"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobTitle" class="control-label"></label>
+                <input asp-for="JobTitle" class="form-control" data-bind="value: JobTitle" />
+                <span class="text-danger" id="JobTitleValidator"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateOfJoining" class="control-label"></label>
+                <input type="date" class="form-control" data-bind="value: DateOfJoining, checkDate: 'Date' " />
+                <span  class="text-danger" id="DateOfJoiningValidator"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" data-bind="checked:EmployeeStatus" /> @Html.DisplayNameFor(model => model.EmployeeStatus)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" data-bind="click: Create, enable:Submit" id="Submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+   
+    
+}
